@@ -11,5 +11,5 @@ The scripts use hardcoded filenames because I'm laaaaaazy.
 1. Run parse_inbox.py on the tab-delimited raw data and call the output "inbox.parsed.tsv". This file contains <name> <TAB> <list of comma-spaced UNIX times of the emails>
 2. Run the plotting scripts in any order.
 
-## Results? ##
-Yep, they're the *.svg files uploaded in the same folder.
+## zzz. Just gimme results! ##
+Check out the *.svg files uploaded in the same folder.
