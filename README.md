@@ -8,7 +8,7 @@ I saved the tab-delimited raw data as inbox.tsv (not available here for privacy 
 ## How to use the scripts ##
 The scripts use hardcoded filenames because I'm laaaaaazy.
 
-1. Run parse_inbox.py on the tab-delimited raw data and call the output "inbox.parsed.tsv". This file contains <name> <TAB> <list of comma-spaced UNIX times of the emails>
+1. Run parse_inbox.py on the tab-delimited raw data and call the output "inbox.parsed.tsv". This file contains \<name\> \t \<list of comma-spaced UNIX times of the emails\>
 2. Run the plotting scripts in any order.
 
 ## zzz. Just gimme results! ##
