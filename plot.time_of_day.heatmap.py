@@ -26,7 +26,6 @@ def get_hour_of_day(unix_time):
     return hour_of_day
 
 email_volume = {}
-
 tsv_reader = csv.reader(open('inbox.parsed.tsv'), delimiter='\t')
 # read the top 18 lines, ignore non-lab members
 for x in range(18):

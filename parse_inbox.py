@@ -16,7 +16,6 @@ import csv
 import datetime
 import difflib
 import re
-import time
 
 KAUST_START_UNIX_TIME = 1367712000
 
@@ -48,6 +47,7 @@ for row in tsv_reader:
     sent_time = get_unix_time(sent_time.group(1))
     
     if sent_time < KAUST_START_UNIX_TIME: continue         # 5th may 2013
+    if '@' in sender: continue         # prevents spam to these addresses
     
     if sender not in inbox:
         inbox[sender] = []

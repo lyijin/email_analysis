@@ -14,8 +14,7 @@ import seaborn as sns
 LAB_MEMBERS = ['Manuel Aranda', 'Yong Li', 'Jit Ern Chen', 'Noura Zahran',
                'Guoxin Cui', 'Maha Czies. Olschowsky', 
                'Marcela Herrera Sarrias', 'Wang Xin']
-NOT_INDIVIDUALS = ['Announcements', 'Whs Order', 'It Helpdesk',
-                   'Coral-List-Request@Coral.Aoml.Noaa.Gov']
+NOT_INDIVIDUALS = ['Announcements', 'Whs Order', 'It Helpdesk']
 
 email_volume = {}
 

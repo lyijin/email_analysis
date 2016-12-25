@@ -36,7 +36,6 @@ def get_weekend_bool(unix_time):
     return d.strftime('%a') in ['Fri', 'Sat']
 
 email_volume = {}
-
 tsv_reader = csv.reader(open('inbox.parsed.tsv'), delimiter='\t')
 # read the top 18 lines, ignore non-lab members
 for x in range(18):
