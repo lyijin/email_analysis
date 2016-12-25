@@ -85,6 +85,10 @@ if 'Chen Jit Ern' in get_best_alias:
 if 'J.E. Chen' in get_best_alias:
     get_best_alias['J.E. Chen'] = 'Jit Ern Chen'
 
+# ... and someone else's shortened name
+if 'Xinw' in get_best_alias:
+    get_best_alias['Xinw'] = 'Wang Xin'
+
 # senders have now been collapsed and stored in dict get_best_alias
 # next step: re-read the inbox file, and store info in a dict
 collapsed_inbox = {}
