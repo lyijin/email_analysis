@@ -12,4 +12,12 @@ The scripts use hardcoded filenames because I'm laaaaaazy.
 2. Run the plotting scripts in any order.
 
 ## zzz. Just gimme results! ##
-Check out the *.svg files uploaded in the same folder.
+
+Senders, sorted by volume:
+![Top senders](top_senders.svg)
+
+Aranda Lab: when do people normally send emails?
+![Time of day](aranda_heatmap.svg)
+
+Aranda Lab: when did they start pestering me?
+![Swarmplot](aranda_swarmplot.svg)
