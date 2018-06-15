@@ -32,7 +32,6 @@ def get_unix_time(time_string):
 inbox = {}
 
 tsv_reader = csv.reader(open('inbox.tsv'), delimiter='\t')
-next(tsv_reader)
 for row in tsv_reader:
     if not row: continue
     if len(row) < 3: continue
@@ -88,6 +87,10 @@ if 'J.E. Chen' in get_best_alias:
 # ... and someone else's shortened name
 if 'Xinw' in get_best_alias:
     get_best_alias['Xinw'] = 'Wang Xin'
+
+# ... and another person swapping her email name midway through her PhD
+if 'Maha Czies. Olschowsky' in get_best_alias:
+    get_best_alias['Maha Czies. Olschowsky'] = 'Maha J. Cziesielski'
 
 # senders have now been collapsed and stored in dict get_best_alias
 # next step: re-read the inbox file, and store info in a dict

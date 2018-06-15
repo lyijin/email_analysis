@@ -12,8 +12,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 LAB_MEMBERS = ['Manuel Aranda', 'Yong Li', 'Jit Ern Chen', 'Noura Zahran',
-               'Guoxin Cui', 'Maha Czies. Olschowsky', 
-               'Marcela Herrera Sarrias', 'Wang Xin']
+               'Guoxin Cui', 'Maha J. Cziesielski', 
+               'Marcela Herrera Sarrias', 'Wang Xin', 'Tianyuan Lu',
+               'Sebastian Schmidt-Roach', 'Ghadeer Hussain',
+               'Juan Antonio Ruiz Santiesteban', 'Sara Campana',
+               'Hanin Ahmed', 'Hao Zhou', 'Sandy Hung', 'Gabriela H Perna']
 NOT_INDIVIDUALS = ['Announcements', 'Whs Order', 'It Helpdesk']
 
 email_volume = {}
@@ -57,9 +60,8 @@ ax.set_xticks([])
 # remove borders around bars
 plt.setp(ax.patches, linewidth=0)
 
-sns.plt.xlim(0, 1480)
+ax.set_xlim(0, 2200)
 sns.despine(left=True, bottom=True, offset=10, trim=True)
-# sns.plt.show()
 
 # save figure
 fig = plt.gcf()

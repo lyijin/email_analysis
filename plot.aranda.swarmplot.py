@@ -15,8 +15,11 @@ import seaborn as sns
 
 KAUST_START_UNIX_TIME = 1367712000
 LAB_MEMBERS = ['Manuel Aranda', 'Yong Li', 'Jit Ern Chen', 'Noura Zahran',
-               'Guoxin Cui', 'Maha Czies. Olschowsky', 
-               'Marcela Herrera Sarrias', 'Wang Xin']
+               'Guoxin Cui', 'Maha J. Cziesielski', 
+               'Marcela Herrera Sarrias', 'Wang Xin', 'Tianyuan Lu',
+               'Sebastian Schmidt-Roach', 'Ghadeer Hussain',
+               'Juan Antonio Ruiz Santiesteban', 'Sara Campana',
+               'Hanin Ahmed', 'Hao Zhou', 'Sandy Hung', 'Gabriela H Perna']
 
 def reformat_time(unix_time):
     """
@@ -37,9 +40,8 @@ def get_weekend_bool(unix_time):
 
 email_volume = {}
 tsv_reader = csv.reader(open('inbox.parsed.tsv'), delimiter='\t')
-# read the top 18 lines, ignore non-lab members
-for x in range(18):
-    row = next(tsv_reader)
+# ignore non-lab members
+for row in tsv_reader:
     if row[0] not in LAB_MEMBERS: continue
 
     email_volume[row[0]] = [int(x) for x in row[1].split(', ')]
@@ -56,13 +58,16 @@ data = pd.DataFrame(data, columns=['sender', 'time', 'weekend'])
 sns.set_style('whitegrid')
 f, ax = plt.subplots(figsize=(12, 8))
 sns.swarmplot(x='time', y='sender', hue='weekend', data=data,
-              palette=['#fdbb84', '#e34a33'], size=3)
+              palette=['#fdbb84', '#e34a33'], size=2)
 
-ax.set_xlabel('Years in KAUST')
+
+tick_labels = [f'{y}\n{x}' for x in range(2013, 2019) for y in ['May', 'Nov']]
+ax.set(xticks=[x * 0.5 for x in range(11)], xticklabels=tick_labels)
+ax.set_xlabel('')
 ax.set_ylabel('')
 plt.legend(loc='center', bbox_to_anchor=(0.5, 1.02), ncol=2,
-           markerscale=3, labels=['Weekend', 'Weekday'])
-sns.plt.xlim(0, 3.7)
+           markerscale=3, labels=['Weekday', 'Weekend'])
+ax.set_xlim(0, 5.01)
 sns.despine(left=True, bottom=True, offset=10, trim=True)
 #sns.plt.show()
 

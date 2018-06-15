@@ -14,8 +14,11 @@ import pandas as pd
 import seaborn as sns
 
 LAB_MEMBERS = ['Manuel Aranda', 'Yong Li', 'Jit Ern Chen', 'Noura Zahran',
-               'Guoxin Cui', 'Maha Czies. Olschowsky', 
-               'Marcela Herrera Sarrias', 'Wang Xin']
+               'Guoxin Cui', 'Maha J. Cziesielski', 
+               'Marcela Herrera Sarrias', 'Wang Xin', 'Tianyuan Lu',
+               'Sebastian Schmidt-Roach', 'Ghadeer Hussain',
+               'Juan Antonio Ruiz Santiesteban', 'Sara Campana',
+               'Hanin Ahmed', 'Hao Zhou', 'Sandy Hung', 'Gabriela H Perna']
 
 def get_hour_of_day(unix_time):
     """
@@ -27,9 +30,8 @@ def get_hour_of_day(unix_time):
 
 email_volume = {}
 tsv_reader = csv.reader(open('inbox.parsed.tsv'), delimiter='\t')
-# read the top 18 lines, ignore non-lab members
-for x in range(18):
-    row = next(tsv_reader)
+# ignore non-lab members
+for row in tsv_reader:
     if row[0] not in LAB_MEMBERS: continue
 
     email_volume[row[0]] = [get_hour_of_day(x) for x in row[1].split(', ')]
@@ -48,7 +50,7 @@ data = pd.DataFrame(data, index=senders, columns=range(24))
 
 # seaborn
 sns.set_style('whitegrid')
-f, ax = plt.subplots(figsize=(15, 4))
+f, ax = plt.subplots(figsize=(20, 6))
 sns.heatmap(data, square=True, cmap='OrRd', vmax=0.125, linewidths=.5)
 
 ax.set_xlabel('Hour of day')
